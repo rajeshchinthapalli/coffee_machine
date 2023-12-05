@@ -5,10 +5,10 @@ from flask_login import LoginManager, UserMixin, login_user, login_required, log
 import os
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] ='sqlite:///cafe.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('SQLALCHEMY_DATABASE_URI')
 db = SQLAlchemy()
 db.init_app(app)
-app.config['SECRET_KEY'] = 'rajesh'
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 login_manager = LoginManager()
 login_manager.init_app(app)
 
