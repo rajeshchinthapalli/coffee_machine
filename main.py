@@ -257,8 +257,8 @@ def addresource():
     water = request.args.get('water')
     coffee_powder = request.args.get('coffee')
     amount = request.args.get('amount')
-    coffee_instance = Resources(milk_stock=milk, water_stock=water, coffee_powder_stock=coffee_powder,
-                                wallet=amount)
+    coffee_instance = Resources(milk=milk, water=water, coffee=coffee_powder,
+                                money=amount)
     db.session.add(coffee_instance)
     db.session.commit()
     return "added"
