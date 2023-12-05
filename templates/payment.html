@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Add your additional styles or scripts here if needed -->
+    <style>
+        body {
+            background-color: #4CAF50;
+            font-family: 'Arial', sans-serif; /* Change Font Family */
+            color: #006400;
+        }
+
+        .container {
+            margin-top: 50px; /* Adjust the top margin */
+            background-color: #C8E6C9; /* Dark Green Background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 300px; /* Adjust the max-width */
+            margin: auto; /* Center the container */
+            color: #1E1E1E; /* White Text Color */
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            color: #1E1E1E; /* White Text Color */
+        }
+
+        .form-control {
+            background-color: #ffffff; /* White Background */
+            color: #333333; /* Dark Grey Text Color */
+            border: 2px solid #4CAF50; /* Dark Green Border */
+            border-radius: 8px; /* Rounded Corners */
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+
+        .btn-primary {
+            background-color: #388E3C; /* Darker Green Button */
+            border: none;
+            border-radius: 8px;
+            padding: 12px 24px;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: #2E7D32; /* Darker Green on Hover */
+        }
+
+        {% if is_short %}
+            p {
+                color: red;
+            }
+        {% endif %}
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Coffee Day</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Logout</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2 class="text-center"><b> Payment Page !</b></h2>
+           <h5 class="text-center">   Complete the payment    </h5>
+
+        <form action="/payment" method="Post">
+            <div class="form-group">
+                <label for="quarters">Number of Quarters</label>
+                <input type="text" class="form-control" name="quarters" id="Quarters">
+            </div>
+            <div class="form-group">
+                <label for="dimes">Number of Dimes</label>
+                <input type="text" class="form-control" name="dimes" id="dimes">
+            </div>
+            <div class="form-group">
+                <label for="nickels">Number of Nickels</label>
+                <input type="text" class="form-control" name="nickels" id="nickels">
+            </div>
+            <div class="form-group">
+                <label for="pennies">Number of Pennies</label>
+                <input type="text" class="form-control" name="pennies" id="pennies">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Payment</button>
+        </form>
+
+        {% if is_short %}
+            <p style="color:red;">You are ${{short}} short for your coffee</p>
+        {% endif %}
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

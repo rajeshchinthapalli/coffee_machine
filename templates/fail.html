@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fail</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #87CEEB; /* Blue Background */
+            font-family: 'Arial', sans-serif; /* Change Font Family */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #ffffff; /* White Background */
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width:30%;
+        }
+
+        h1 {
+            color: #dc3545; /* Bootstrap danger color */
+        }
+
+        p {
+            color: #1E1E1E; /* Dark Blue Text Color */
+        }
+
+        .btn-primary {
+            background-color: #001a33; /* Dark Blue Button Color */
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <center>
+            <h1><b>Payment Failed!</b></h1>
+            <h3><b>Insufficient amount</b></h3>
+            <p>Amount Refunded</p>
+
+            <a href="/payment" class="btn btn-primary">PAY AGAIN</a>
+        </center>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

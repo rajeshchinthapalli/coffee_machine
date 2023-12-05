@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap">
+
+    <style>
+        /* Custom CSS for background color */
+        body {
+            background: linear-gradient(to bottom, #d2b48c, #8B4513);
+            color: #000000;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        /* Style for the bottom part */
+        .bottom-section {
+            background: linear-gradient(to bottom, #007bff, #0056b3);
+            padding: 20px;
+            margin-top: auto;
+        }
+
+        /* Center the content */
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        /* Brown navigation bar */
+        .navbar {
+            background-color: #8B4513 !important;
+        }
+
+        /* White login button */
+        .btn-primary {
+            background-color: #ffffff;
+            border: 2px solid #8B4513;
+            color: #8B4513;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #f8f8f8; /* Light gray on hover */
+        }
+
+        /* Brown sign up button */
+        .btn-success {
+            background-color: #8B4513;
+            border: 2px solid #8B4513;
+            color: #ffffff;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-success:hover {
+            background-color: #593522; /* Darker brown on hover */
+        }
+
+        /* Additional styling for headings */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* Additional styling for paragraphs */
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Coffee Day</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/register">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="display-4">Coffee Day</h1>
+        <p>Join Us to have coffee</p>
+        <button class="btn btn-primary" onclick="redirectToLogin()">Login</button>
+        <button class="btn btn-success" onclick="redirectToRegister()">Sign Up</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        function redirectToLogin() {
+            // Redirect to the Flask login page
+            window.location.href = "/login";
+        }
+
+        function redirectToRegister() {
+            // Redirect to the Flask login page
+            window.location.href = "/register";
+        }
+    </script>
+</body>
+</html>

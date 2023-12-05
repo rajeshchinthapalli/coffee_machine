@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #8B4513; /* Dark Grey Background */
+            font-family: 'Arial', sans-serif; /* Change Font Family */
+            display: block;
+        }
+
+        .container {
+        background: url('https://img.freepik.com/free-vector/coffee-love-foam-with-beans-cartoon-icon-illustration_138676-2575.jpg') center center no-repeat;
+            background-size: cover;
+            background-color: #f0f0f0; /* Light Grey Background */
+            margin-top: 50px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            color: #1E1E1E; /* Dark Grey Text Color */
+            width: 30%; /* Adjusted container size */
+            margin-top: 120px; /* Center the container */
+        }
+
+        .success {
+            text-align: center;
+        }
+
+        h4 ,h6{
+            color: #1E1E1E; /* Dark Grey Text Color */
+        }
+
+
+        a.btn {
+            margin-top: 15px;
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #ffffff; /* White Text Color */
+            background-color: #555555; /* Dark Grey Button Color */
+            border-radius: 25px; /* Rounded Corners */
+            transition: background-color 0.3s;
+        }
+
+        a.btn:hover {
+            background-color: #333333; /* Darker Grey on Hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="success">
+            <h4><b>$ Payment Successful $</b></h4>
+            <h6><b>COFFEE SERVED!!!</b></h6>
+            {% if balance %}
+                <p class="change" style="width:100%;font-size:17px;color:red;">Please collect your change ${{change}}</p>
+            {% endif %}
+
+            <a href="{{url_for('welcome')}}" class="btn btn-primary" style="width:150px;font-size:10px;margin-top:200px;">ANOTHER COFFEE?</a>
+
+            <a href="{{url_for('logout')}}" class="btn btn-danger" style="width:150px;font-size:10px;margin-top:200px;">I'M DONE</a>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

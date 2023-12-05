@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+    background: #D2B48C; /* Light Brown Background */
+    color: #ffffff;
+    margin: 0;
+    min-height: 100vh;
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    color: #001a33;
+    text-align: center;
+    margin-top: 120px;
+}
+
+form {
+    margin-top: 20px;
+}
+
+.coffee-btn {
+    background-color: #8B4513; /* Dark Brown Button */
+    color: #fff;
+    border: none;
+    padding: 15px 30px; /* Larger Button Size */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px; /* Larger Text Size */
+    font-family: 'Arial', sans-serif; /* Change Font Family */
+    margin-bottom: 10px; /* Add space between buttons */
+}
+
+/* Radio Button Style */
+.radio-btn {
+    display: block; /* Display buttons in a block */
+    margin-bottom: 10px; /* Add some space between buttons */
+}
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Coffee Day</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/logout">Logout</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="alert alert-{{ category }}">{{ message }}</div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<div class="container">
+    <h2 class="text-center">Welcome, {{ name }}</h2>
+    <p>Your login was successful!</p>
+    <h5>Please select your coffee</h5>
+
+    <form action="/coffee" method="post">
+        <button type="submit" name="coffee_type" value="Espresso" class="coffee-btn">Espresso</button>
+    <button type="submit" name="coffee_type" value="Cappuccino" class="coffee-btn">Cappuccino</button>
+    <button type="submit" name="coffee_type" value="Latte" class="coffee-btn">Latte</button>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
